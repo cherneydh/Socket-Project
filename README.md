@@ -3,7 +3,7 @@ Socket Project for CPSC 471
 
 Daniel Cherney - cherneydh@csu.fullerton.edu
 
-Devin  Cao     -
+Devin  Cao     - devincao@csu.fullerton.edu
 
 Hamesh Sharma  - hksharma@csu.fullerton.edu
 
