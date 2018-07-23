@@ -22,7 +22,7 @@ How to avoid overflowing TCP buffers?
 
 You may want to use diagrams to model your protocol.
 
-This program was written in Python3.
+This project was written in Python3.
 
 How to execute:
 
