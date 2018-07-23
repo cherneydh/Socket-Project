@@ -12,6 +12,7 @@ port = sys.argv[1]
 try:
     conn.bind(("127.0.0.1", int(port)))
     print("Connection bind successful")
+    input("Press any key to continue.")
 except socket.error as msg:   
     print("Error: " + msg)
     sys.exit()
