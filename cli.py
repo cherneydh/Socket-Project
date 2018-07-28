@@ -14,9 +14,17 @@ try:
     cliconn = socket(AF_INET, SOCK_STREAM)
     cliconn.connect(( server , int(port) ))
     print("Connection successfully completed")
-except Exception, e:
+except Exception as e:
     print(e)
     sys.exit()
 
-while(query != "quit"):
-    query = raw_input("ftp> ")
+while (query != 'quit'):
+    query = (input('ftp>')).lower()
+    if (query == 'get'):
+        print('test get')
+    elif (query == 'put'):
+        print('test put')
+    elif (query == 'ls'):
+        print('test ls')
+    elif (query != 'quit'):
+        print('Unrecognized Command')
