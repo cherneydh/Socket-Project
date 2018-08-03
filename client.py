@@ -36,21 +36,14 @@ while (True):
 
     elif (query == 'put'):
         print('test put')
-        f = open(string(file),'rb')
-        l = f.read(1024)
-        while (l):
-            print ('Sending')
-            s.send(l)
-            l = f.read(1024)
-        f.close()
-        clientsocket.shutdown(socket.SHUT_WR)
-        clientsocket.recv(1024)
     elif (query == 'ls'):
         print('test ls')
+        print (clientsocket.recv(1024).decode('ascii'))
         print (clientsocket.recv(1024).decode('ascii'))
     elif (query == 'quit'):
         print('Closing connection')
         clientsocket.send(query.encode('ascii'))
         clientsocket.close()
+        break
     elif (query != 'quit'):
         print('Invalid command')
