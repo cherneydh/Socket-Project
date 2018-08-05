@@ -26,16 +26,13 @@ except Exception as e:
 # Receive test message
 msg = clientsocket.recv(1024)
 print (msg.decode('ascii'))
-'''
-while (True):
-    query = (input('ftp>')).lower()'''
+
 while (query != 'quit'):
     query = (input('ftp>')).lower()
     #send command to server
     clientsocket.send(query.encode('ascii'))
     if (query == 'get'):
         print('test get')
-
     elif (query == 'put'):
         print('test put')
     elif (query == 'ls'):

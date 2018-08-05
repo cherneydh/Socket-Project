@@ -19,11 +19,10 @@ try:
     print("Connection bind successful")
     print(socket.gethostname())
     print(int(port))
-    #input("Press any key to continue.")
     # establish a connection
     clientsocket,addr = serversocket.accept()
     print("Got a connection from %s" % str(addr))
-    msg = 'Thank you for connecting'+ "\r\n"
+    msg = 'Thank you for connecting'+ "\r"
     clientsocket.send(msg.encode('ascii'))
 except socket.error as msg:
     print("Error: " + msg)
@@ -43,7 +42,7 @@ while True:
         print('ls cmd')
         response = 'ls response' + "\r\n"
         clientsocket.send(response.encode('ascii'))
-        clientsocket.send(' '.join(os.listdir(os.path.realpath(os.path.dirname(__file__)))).encode('ascii'))
+        clientsocket.send(' '.join(os.listdir(os.curdir)).encode('ascii'))
     elif (query == 'quit'):
         print("Closing connection from: %s" % str(addr) )
         clientsocket.close()
