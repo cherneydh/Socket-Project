@@ -10,14 +10,14 @@ print("Socket established")
 port = sys.argv[1]
 
 try:
-    serversocket.bind((socket.gethostname(), int(port)))
+    serversocket.bind(('', int(port)))
     # queue up to 5 requests
     serversocket.listen(5)
     #serversocket.bind(("127.0.0.1", int(port)))
     print("Connection bind successful")
     print(socket.gethostname())
     print(int(port))
-    input("Press any key to continue.")
+    #input("Press any key to continue.")
 except socket.error as msg:
     print("Error: " + msg)
     sys.exit()
