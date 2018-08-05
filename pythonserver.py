@@ -34,9 +34,11 @@ while True:
         break
     print("Command recieved: %s" % str(query))
     if (query == 'get'):
-        print('test get')
+        filename = clientsocket.recv(1024).decode("ascii")
+        print(filename)
     elif (query == 'put'):
-        print('test put')
+        filename = clientsocket.recv(1024).decode("ascii")
+        print(filename)
     elif (query == 'ls'):
         print('ls cmd')
         response = 'ls response' + "\r\n"
