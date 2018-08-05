@@ -4,7 +4,6 @@ import os
 import sys
 import subprocess
 
-
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 #serversocket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 print("Socket established")
@@ -41,8 +40,11 @@ while True:
     elif (query == 'ls'):
         print('ls cmd')
         response = 'ls response' + "\r\n"
+        ls = os.listdir()
+        string = '\n'.join(ls)
+        response = response + string
         clientsocket.send(response.encode('ascii'))
-        clientsocket.send(' '.join(os.listdir(os.curdir)).encode('ascii'))
+        #clientsocket.send(' '.join(os.listdir(os.curdir)).encode('ascii'))
     elif (query == 'quit'):
         print("Closing connection from: %s" % str(addr) )
         clientsocket.close()

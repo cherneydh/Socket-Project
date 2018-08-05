@@ -36,9 +36,8 @@ while (query != 'quit'):
     elif (query == 'put'):
         print('test put')
     elif (query == 'ls'):
-        print('test ls')
         print (clientsocket.recv(1024).decode('ascii'))
-        print (clientsocket.recv(1024).decode('ascii'))
+        #print (clientsocket.recv(1024).decode('ascii'))
     elif (query == 'quit'):
         print('Closing connection')
         clientsocket.send(query.encode('ascii'))
