@@ -36,7 +36,12 @@ while (query != 'quit'):
         clientsocket.send(filename.encode('ascii'))
     elif (query == 'put'):
         filename = input('Enter filename: ')
-        clientsocket.send(filename.encode('ascii')) 
+        clientsocket.send(filename.encode('ascii'))
+        f = open (filename, "rb")
+        l = f.read(1024)
+        while (l):
+            clientsocket.send(l)
+            l = f.read(1024)	 
     elif (query == 'ls'):
         print (clientsocket.recv(1024).decode('ascii'))
         #print (clientsocket.recv(1024).decode('ascii'))
