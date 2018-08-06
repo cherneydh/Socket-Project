@@ -11,9 +11,6 @@ query = ""
 # create a socket object
 clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-# get local machine name
-#host = socket.gethostname()
-#port = 9999
 # connection to hostname on the port.
 try:
     clientsocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -39,10 +36,8 @@ while (query != 'quit'):
         clientsocket.send(filename.encode('ascii')) 
     elif (query == 'ls'):
         print (clientsocket.recv(1024).decode('ascii'))
-        #print (clientsocket.recv(1024).decode('ascii'))
     elif (query == 'quit'):
         print('Closing connection')
-        clientsocket.send(query.encode('ascii'))
         clientsocket.close()
         break
     elif (query != 'quit'):
